@@ -1,0 +1,6 @@
+snapshots/
+*.log
+.DS_Store
+Thumbs.db
+PUBLISH_GUIDE.md
+BRIEF.md
