@@ -23,6 +23,7 @@ body {
   font-family: var(--sans);
   font-size: 16px;
   line-height: 1.7;
+  overflow-x: hidden;
 }
 
 #bg-particles { position: fixed; inset: 0; z-index: 0; pointer-events: none; }
@@ -356,7 +357,8 @@ main { max-width: 1080px; margin: 0 auto; padding: 40px 28px 80px; }
 
   /* Contact:地图占满宽度 + 固定高度 */
   .contact-wrap { gap: 28px; }
-  .contact-grid { max-width: 100%; }
+  .contact-grid { flex: 1 1 100%; max-width: 100%; }
+  .hero-text { flex: 1 1 auto; min-width: 0; }
   .contact-row { font-size: 14px; gap: 8px; }
   .contact-row .k { width: 76px; }
   .map-card { width: 100%; }
@@ -365,4 +367,21 @@ main { max-width: 1080px; margin: 0 auto; padding: 40px 28px 80px; }
   /* 页脚 */
   .site-footer { padding: 20px 14px 30px; }
   .footer-inner { flex-direction: column; gap: 6px; }
+}
+
+/* ===== 极窄屏适配(≤480px,小屏手机) ===== */
+@media (max-width: 480px) {
+  .logo { height: 38px; }
+  .logo.ece { height: 44px; }
+  .org-line1 { font-size: 11px; }
+  .tab { font-size: 12.5px; padding: 6px 7px 5px; }
+  .section-title { font-size: 18px; }
+  .hero { padding: 20px 14px 6px; gap: 18px; }
+  .hero-text h1 { font-size: 27px; }
+  .hero-text .role { font-size: 17px; }
+  .hero-photo img { width: 170px; height: 213px; }
+  .topic-img { min-height: 100px; }
+  .bio-photo img { width: 160px; height: 204px; }
+  .map-frame { height: 240px; }
+  .contact-row .k { width: 68px; }
 }
