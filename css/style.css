@@ -61,7 +61,7 @@ main, .site-footer { position: relative; z-index: 1; }
 .header-inner {
   position: relative; z-index: 1;
   max-width: 1080px; margin: 0 auto; padding: 5px 28px 2px;
-  display: flex; justify-content: flex-start; align-items: center; gap: 20px; flex-wrap: wrap;
+  display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap;
 }
 .logos { display: flex; align-items: center; gap: 18px; }
 .org-text { display: flex; flex-direction: column; line-height: 1.35; margin-top: 12px; margin-left: 165px; }
@@ -306,13 +306,12 @@ main { max-width: 1080px; margin: 0 auto; padding: 40px 28px 80px; }
 
 /* ===== 手机端适配(≤640px) ===== */
 @media (max-width: 640px) {
-  /* Header 手机版:行1 = 徽标放大居中接近横向充满;行2 = 汉堡(左)+ slogan(右) */
-  .header-inner { padding: 10px 14px 6px; gap: 6px; flex-wrap: wrap; }
+  /* Header 手机版(纯 CSS,不动桌面):行1 = 徽标放大居中;行2 = 汉堡(左)+ slogan(右) */
   .site-header { overflow: visible; }
-  .logos { order: 1; width: 100%; justify-content: center; gap: 28px; }
+  .logos { width: 100%; flex-wrap: wrap; justify-content: center; gap: 6px 28px; }
   .logo { height: 62px; }
   .logo.ece { height: 70px; }
-  .menu-toggle { order: 2; padding: 8px 12px 8px 0; }
+  .menu-toggle { order: 2; display: flex; padding: 8px 12px 8px 0; }
   .org-text { order: 3; flex: 1; margin-left: 0; margin-top: 2px; text-align: right; }
   .org-line1 { font-size: 11px; line-height: 1.35; letter-spacing: .01em; }
   .header-bg { opacity: 0.12; }
