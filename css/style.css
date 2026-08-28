@@ -300,3 +300,69 @@ main { max-width: 1080px; margin: 0 auto; padding: 40px 28px 80px; }
   .tabs { padding: 0 20px; }
   main { padding: 28px 20px 60px; }
 }
+
+/* ===== 手机端适配(≤640px) ===== */
+@media (max-width: 640px) {
+  /* Header:logo 缩小、口号去缩进、字号压缩 */
+  .header-inner { padding: 10px 14px 6px; gap: 10px; }
+  .logos { gap: 10px; }
+  .logo { height: 44px; }
+  .logo.ece { height: 50px; }
+  .org-text { margin-left: 0; margin-top: 8px; }
+  .org-line1 { font-size: 12px; line-height: 1.4; letter-spacing: .01em; }
+
+  /* Tabs:更紧凑,6 个可横滑 */
+  .tabs { padding: 0 10px; gap: 2px; }
+  .tab { font-size: 13.5px; padding: 7px 9px 6px; }
+
+  /* 主区与标题 */
+  main { padding: 22px 14px 50px; }
+  .section-title { font-size: 20px; gap: 10px; }
+  .sub-title { font-size: 17px; }
+
+  /* Hero:紧凑留白,照片适中 */
+  .hero { padding: 24px 18px 8px; gap: 22px; margin-bottom: 30px; }
+  .hero-text h1 { font-size: 31px; }
+  .hero-text .role { font-size: 19px; }
+  .hero-text .stmt { font-size: 14.5px; }
+  .hero-photo img { width: 190px; height: 238px; }
+  .hero .recruit-callout { white-space: normal; overflow: visible; text-overflow: clip; font-size: 13.5px; padding: 10px 12px; gap: 8px; margin-top: -4px; }
+  .btn { padding: 7px 14px; font-size: 13px; }
+
+  /* 申请面板 */
+  .apply-panel { padding: 18px 16px; }
+  .apply-lead, .apply-body { font-size: 14px; }
+
+  /* Research 面板 */
+  .topic-panel { padding: 16px; gap: 18px; }
+  .topic-text h3 { font-size: 17px; }
+  .topic-text p { font-size: 13.5px; }
+  .topic-img { min-height: 120px; }
+
+  /* 出版物 */
+  .pub-item .title { font-size: 15px; }
+  .pub-item .meta { font-size: 13px; }
+  .pub-group { font-size: 14px; }
+
+  /* About */
+  .bio-card { margin-left: 0; gap: 24px; }
+  .bio-photo img { width: 180px; height: 230px; }
+  .bio-text { font-size: 14px; }
+  .edu-dept, .edu-school { font-size: 14.5px; }
+  .art-list li { gap: 10px; }
+  .art-list .when { min-width: 72px; font-size: 13px; }
+  .art-list .what { font-size: 14px; }
+  .timeline .what { font-size: 15px; }
+
+  /* Contact:地图占满宽度 + 固定高度 */
+  .contact-wrap { gap: 28px; }
+  .contact-grid { max-width: 100%; }
+  .contact-row { font-size: 14px; gap: 8px; }
+  .contact-row .k { width: 76px; }
+  .map-card { width: 100%; }
+  .map-frame { height: 280px; flex: none; }
+
+  /* 页脚 */
+  .site-footer { padding: 20px 14px 30px; }
+  .footer-inner { flex-direction: column; gap: 6px; }
+}
