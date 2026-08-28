@@ -308,12 +308,12 @@ main { max-width: 1080px; margin: 0 auto; padding: 40px 28px 80px; }
 @media (max-width: 640px) {
   /* Header 手机版(纯 CSS,不动桌面):行1 = 徽标放大居中;行2 = 汉堡(左)+ slogan(右) */
   .site-header { overflow: visible; }
-  .logos { width: 100%; flex-wrap: wrap; justify-content: center; gap: 6px 28px; }
-  .logo { height: 62px; }
-  .logo.ece { height: 70px; }
-  .menu-toggle { order: 2; display: flex; padding: 8px 12px 8px 0; }
+  .logos { width: 100%; flex-wrap: wrap; justify-content: center; gap: 6px clamp(8px, 4vw, 28px); }
+  .logo { height: auto; width: auto; max-width: 45%; max-height: clamp(44px, 15vw, 68px); }
+  .logo.ece { max-height: clamp(50px, 17vw, 76px); }
+  .menu-toggle { order: 2; display: flex; padding: 8px clamp(6px, 2vw, 12px) 8px 0; }
   .org-text { order: 3; flex: 1; margin-left: 0; margin-top: 2px; text-align: right; }
-  .org-line1 { font-size: 11px; line-height: 1.35; letter-spacing: .01em; }
+  .org-line1 { font-size: clamp(10px, 3vw, 12px); line-height: 1.35; letter-spacing: .01em; }
   .header-bg { opacity: 0.12; }
 
   /* 汉堡按钮:显示,靠右 */
@@ -385,9 +385,6 @@ main { max-width: 1080px; margin: 0 auto; padding: 40px 28px 80px; }
 
 /* ===== 极窄屏适配(≤480px,小屏手机) ===== */
 @media (max-width: 480px) {
-  .logo { height: 54px; }
-  .logo.ece { height: 60px; }
-  .org-line1 { font-size: 10.5px; }
   .tab { font-size: 12.5px; padding: 6px 7px 5px; }
   .section-title { font-size: 18px; }
   .hero { padding: 20px 14px 6px; gap: 18px; }
