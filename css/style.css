@@ -1,3 +1,9 @@
+@font-face {
+  font-family: 'Kaushan Script';
+  src: url('../assets/fonts/kaushan-script.woff2') format('woff2');
+  font-display: swap;
+}
+
 :root {
   --hku-green:       #00543C;
   --hku-green-deep:  #0C3326;
@@ -68,7 +74,7 @@ main, .site-footer { position: relative; z-index: 1; }
 .org-text { display: flex; flex-direction: column; line-height: 1.35; margin-top: 12px; margin-left: 165px; }
 .org-line1 {
   display: block;
-  font-family: 'Segoe Script', 'Bradley Hand', 'Brush Script MT', 'Comic Sans MS', cursive;
+  font-family: 'Segoe Script', 'Kaushan Script', 'Bradley Hand', 'Brush Script MT', 'Comic Sans MS', cursive;
   font-size: 17px; font-weight: 500;
   color: var(--hku-green-ink); letter-spacing: .02em; line-height: 1.5;
   text-align: left;
