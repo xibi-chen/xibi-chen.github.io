@@ -29,7 +29,8 @@
       </div>
     </div>
   </div>
-  <nav class="tabs" role="tablist" aria-label="Sections">
+  <button class="menu-toggle" id="menu-toggle" aria-label="Menu" aria-expanded="false" aria-controls="tabs-nav"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
+  <nav class="tabs" role="tablist" aria-label="Sections" id="tabs-nav">
     <button class="tab" role="tab" id="tab-home" aria-controls="panel-home" aria-selected="true">Home</button>
     <button class="tab" role="tab" id="tab-bio" aria-controls="panel-bio" aria-selected="false">About</button>
     <button class="tab" role="tab" id="tab-research" aria-controls="panel-research" aria-selected="false">Research</button>
@@ -337,7 +338,7 @@
 <footer class="site-footer">
   <div class="footer-inner">
     <span>© 2026 Xibi Chen · The University of Hong Kong</span>
-    <span>HKU-ECE</span>
+    <span class="footer-brand">HKU-ECE</span>
   </div>
 </footer>
 

@@ -42,6 +42,22 @@
 
   show(initialId);
 
+  // 手机端汉堡菜单:点按钮展开/收起下拉;点任意 tab 后收起;窗口拉大时复位
+  var nav = document.getElementById('tabs-nav');
+  var toggle = document.getElementById('menu-toggle');
+  function closeMenu() {
+    if (nav) nav.classList.remove('open');
+    if (toggle) toggle.setAttribute('aria-expanded', 'false');
+  }
+  if (toggle && nav) {
+    toggle.addEventListener('click', function () {
+      var open = nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', String(open));
+    });
+  }
+  tabs.forEach(function (t) { t.addEventListener('click', closeMenu); });
+  window.addEventListener('resize', function () { if (window.innerWidth > 640) closeMenu(); });
+
   Array.prototype.forEach.call(document.querySelectorAll('[data-tab]'), function (a) {
     a.addEventListener('click', function (e) {
       e.preventDefault();

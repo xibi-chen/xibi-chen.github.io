@@ -91,6 +91,8 @@ main, .site-footer { position: relative; z-index: 1; }
 .tab:hover { color: var(--hku-green); }
 .tab[aria-selected="true"] { color: var(--hku-green); border-bottom-color: var(--copper); font-weight: 600; }
 .tab:focus-visible { outline: 2px solid var(--copper); outline-offset: -2px; }
+.menu-toggle { display: none; }
+.menu-toggle .bar { width: 22px; height: 2.5px; background: var(--ink-soft); border-radius: 2px; }
 
 main { max-width: 1080px; margin: 0 auto; padding: 40px 28px 80px; }
 .tabpanel { display: none; }
@@ -304,25 +306,35 @@ main { max-width: 1080px; margin: 0 auto; padding: 40px 28px 80px; }
 
 /* ===== 手机端适配(≤640px) ===== */
 @media (max-width: 640px) {
-  /* Header:logo 缩小、口号去缩进、字号压缩 */
-  .header-inner { padding: 10px 14px 6px; gap: 10px; }
-  .logos { gap: 10px; }
-  .logo { height: 44px; }
-  .logo.ece { height: 50px; }
-  .org-text { margin-left: 0; margin-top: 8px; }
-  .org-line1 { font-size: 12px; line-height: 1.4; letter-spacing: .01em; }
+  /* Header 手机版:一行 = 两个 logo + 汉堡按钮;slogan 独占第二行 */
+  .header-inner { padding: 8px 14px 6px; gap: 8px; }
+  .logos { flex: 1; gap: 8px; flex-wrap: wrap; }
+  .logo { height: 38px; }
+  .logo.ece { height: 44px; }
+  .org-text { width: 100%; margin-left: 0; margin-top: 2px; }
+  .org-line1 { font-size: 11.5px; line-height: 1.35; letter-spacing: .01em; }
+  .header-bg { opacity: 0.12; }
 
-  /* Tabs:更紧凑,6 个可横滑 */
-  .tabs { padding: 0 10px; gap: 2px; }
-  .tab { font-size: 13.5px; padding: 7px 9px 6px; }
+  /* 汉堡按钮:显示,靠右 */
+  .menu-toggle { display: flex; flex-direction: column; gap: 4px; align-items: center; justify-content: center; background: none; border: none; cursor: pointer; padding: 8px 4px; }
+  .menu-toggle:hover .bar { background: var(--copper); }
+
+  /* Tabs 手机版:汉堡下拉菜单 */
+  .tabs { display: none; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; background: var(--paper-soft); border-bottom: 1px solid var(--line); box-shadow: 0 10px 24px rgba(34,48,43,.12); padding: 6px 0; margin: 0; max-width: none; gap: 0; z-index: 5; }
+  .tabs.open { display: flex; }
+  .tab { text-align: left; font-size: 15px; padding: 13px 22px; border-bottom: 1px solid var(--line); border-left: 3px solid transparent; }
+  .tab:last-child { border-bottom: none; }
+  .tab[aria-selected="true"] { border-left-color: var(--copper); font-weight: 600; }
 
   /* 主区与标题 */
   main { padding: 22px 14px 50px; }
   .section-title { font-size: 20px; gap: 10px; }
   .sub-title { font-size: 17px; }
 
-  /* Hero:紧凑留白,照片适中 */
-  .hero { padding: 24px 18px 8px; gap: 22px; margin-bottom: 30px; }
+  /* Hero:照片在上,文字中间,OPENINGS 红字保持在面板最下方 */
+  .hero { padding: 24px 18px 8px; gap: 22px; margin-bottom: 30px; flex-direction: column; }
+  .hero-photo { order: -1; }
+  .hero .recruit-callout { order: 10; margin-top: -4px; }
   .hero-text h1 { font-size: 31px; }
   .hero-text .role { font-size: 19px; }
   .hero-text .stmt { font-size: 14.5px; }
@@ -364,9 +376,10 @@ main { max-width: 1080px; margin: 0 auto; padding: 40px 28px 80px; }
   .map-card { width: 100%; }
   .map-frame { height: 280px; flex: none; }
 
-  /* 页脚 */
+  /* 页脚:隐藏 HKU-ECE,版权一行居中 */
   .site-footer { padding: 20px 14px 30px; }
-  .footer-inner { flex-direction: column; gap: 6px; }
+  .footer-inner { justify-content: center; gap: 6px; }
+  .footer-brand { display: none; }
 }
 
 /* ===== 极窄屏适配(≤480px,小屏手机) ===== */
