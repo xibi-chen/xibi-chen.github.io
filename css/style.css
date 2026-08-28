@@ -291,9 +291,9 @@ main { max-width: 1080px; margin: 0 auto; padding: 40px 28px 80px; }
 }
 .art-list .when {
   color: var(--copper); font-weight: 700; font-size: 14px;
-  min-width: 96px; font-variant-numeric: tabular-nums;
+  flex: none; min-width: 118px; white-space: nowrap; font-variant-numeric: tabular-nums;
 }
-.art-list .what { color: var(--ink); font-size: 15px; }
+.art-list .what { color: var(--ink); font-size: 15px; flex: 1; }
 .art-list .what em { color: var(--ink-soft); }
 .art-list .note { color: var(--ink-soft); font-size: 13.5px; }
 
@@ -372,7 +372,7 @@ main { max-width: 1080px; margin: 0 auto; padding: 40px 28px 80px; }
   .bio-text { font-size: 14px; }
   .edu-dept, .edu-school { font-size: 14.5px; }
   .art-list li { gap: 10px; }
-  .art-list .when { min-width: 72px; font-size: 13px; }
+  .art-list .when { min-width: 104px; font-size: 13px; }
   .art-list .what { font-size: 14px; }
   .timeline .what { font-size: 15px; }
 
