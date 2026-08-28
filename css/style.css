@@ -281,13 +281,13 @@ main { max-width: 1080px; margin: 0 auto; padding: 40px 28px 80px; }
 
 .art-list { list-style: none; }
 .art-list li {
-  display: flex; align-items: baseline; gap: 14px;
+  display: flex; align-items: flex-start; gap: 14px;
   padding: 11px 0; border-bottom: 1px dashed var(--line);
 }
 .art-list li::before {
   content: ""; flex: none; width: 8px; height: 8px;
   border: 1.5px solid var(--copper); transform: rotate(45deg);
-  align-self: center;
+  margin-top: 5px;
 }
 .art-list .when {
   color: var(--copper); font-weight: 700; font-size: 14px;
