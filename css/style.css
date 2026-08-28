@@ -308,11 +308,13 @@ main { max-width: 1080px; margin: 0 auto; padding: 40px 28px 80px; }
 @media (max-width: 640px) {
   /* Header 手机版(纯 CSS,不动桌面):CSS Grid 强制两行 —— 行1 = 两徽标等高并排;行2 = 汉堡(左)+ slogan(右) */
   .site-header { overflow: visible; }
-  .logos { width: 100%; display: grid; grid-template-columns: auto 1fr; grid-template-areas: "hku ece" "tog slogan"; align-items: center; justify-items: start; column-gap: 16px; row-gap: 2px; }
-  .logo { grid-area: hku; height: 56px; width: auto; }
-  .logo.ece { grid-area: ece; height: 56px; width: auto; }
-  .menu-toggle { grid-area: tog; display: flex; flex-direction: column; gap: 4px; align-items: center; justify-content: center; background: none; border: none; cursor: pointer; padding: 8px 10px 6px 0; }
-  .org-text { grid-area: slogan; justify-self: end; text-align: right; margin-left: 0; margin-top: 0; }
+  .logos { width: 100%; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 4px 10px; }
+  .logo { flex-shrink: 0; height: clamp(50px, 18vw, 92px); width: auto; }
+  .logo.ece { flex-shrink: 0; height: clamp(50px, 18vw, 92px); width: auto; }
+  .menu-toggle { display: flex; flex-direction: row; align-items: center; gap: 7px; background: none; border: none; cursor: pointer; padding: 10px 12px 6px 0; }
+  .menu-toggle .menu-icon { display: flex; flex-direction: column; gap: 4px; align-items: center; justify-content: center; }
+  .menu-toggle .menu-label { font-size: 12px; font-weight: 600; color: var(--ink-soft); letter-spacing: .02em; }
+  .org-text { flex: 1 1 auto; min-width: 0; margin-left: 0; margin-top: 0; text-align: right; }
   .org-line1 { font-size: 11px; line-height: 1.35; letter-spacing: .01em; }
   .header-bg { opacity: 0.12; }
 
